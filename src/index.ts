@@ -3,15 +3,21 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import express from "express";
 import { registerBibleTools } from "./tools/bible-tools.js";
+import { registerPatristicsTools } from "./tools/patristics-tools.js";
+import { registerNltTools } from "./tools/nlt-tools.js";
+import { registerLectionaryTools } from "./tools/lectionary-tools.js";
 
 // ─── Initialize MCP server ───
 const server = new McpServer({
   name: "bible-mcp-server",
-  version: "1.0.0",
+  version: "1.1.0",
 });
 
-// Register all Bible tools
+// Register all tools
 registerBibleTools(server);
+registerPatristicsTools(server);
+registerNltTools(server);
+registerLectionaryTools(server);
 
 // ─── Transport: stdio (default) or HTTP ───
 
@@ -51,7 +57,7 @@ async function runHTTP(): Promise<void> {
 
   // Health check (no auth required)
   app.get("/health", (_req, res) => {
-    res.json({ status: "ok", server: "bible-mcp-server" });
+    res.json({ status: "ok", server: "bible-mcp-server", version: "1.1.0", tools: 15 });
   });
 
   const port = parseInt(process.env.PORT || "3000");

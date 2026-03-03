@@ -1,7 +1,7 @@
 {
   "name": "bible-mcp-server",
-  "version": "1.0.0",
-  "description": "MCP server for API.Bible — scripture lookup, search, and passage retrieval",
+  "version": "1.1.0",
+  "description": "MCP server for Bible study — API.Bible, CCEL patristics, NLT, and lectionary tools",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
