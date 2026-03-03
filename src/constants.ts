@@ -1,5 +1,5 @@
 // API.Bible base URL and configuration
-export const API_BASE_URL = "https://api.scripture.api.bible/v1";
+export const API_BASE_URL = "https://rest.api.bible/v1";
 
 // Character limit for responses to avoid flooding context
 export const CHARACTER_LIMIT = 15_000;
