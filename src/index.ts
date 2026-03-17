@@ -6,6 +6,7 @@ import { registerBibleTools } from "./tools/bible-tools.js";
 import { registerPatristicsTools } from "./tools/patristics-tools.js";
 import { registerNltTools } from "./tools/nlt-tools.js";
 import { registerLectionaryTools } from "./tools/lectionary-tools.js";
+import { registerPhase2Tools } from "./tools/phase2-tools.js";
 
 // ─── Initialize MCP server ───
 const server = new McpServer({
@@ -18,6 +19,7 @@ registerBibleTools(server);
 registerPatristicsTools(server);
 registerNltTools(server);
 registerLectionaryTools(server);
+registerPhase2Tools(server);
 
 // ─── Transport: stdio (default) or HTTP ───
 
